@@ -38,23 +38,23 @@ async def github(_, message):
 
                 caption = f"""ɢɪᴛʜᴜʙ ɪɴғᴏ ᴏғ {name}
                 
-ᴜsᴇʀɴᴀᴍᴇ: {username}
-ʙɪᴏ: {bio}
-ʟɪɴᴋ: [Here]({url})
-ᴄᴏᴍᴩᴀɴʏ: {company}
-ᴄʀᴇᴀᴛᴇᴅ ᴏɴ: {created_at}
-ʀᴇᴩᴏsɪᴛᴏʀɪᴇs: {repositories}
-ʙʟᴏɢ: {blog}
-ʟᴏᴄᴀᴛɪᴏɴ: {location}
-ғᴏʟʟᴏᴡᴇʀs: {followers}
-ғᴏʟʟᴏᴡɪɴɢ: {following}"""
+✿ ᴜsᴇʀɴᴀᴍᴇ: {username}
+✿ ʙɪᴏ : {bio}
+✿ ʟɪɴᴋ : [ᴄʟɪᴄᴋ ʜᴇʀᴇ]({url})
+✿ ᴄᴏᴍᴩᴀɴʏ : {company}
+✿ ᴄʀᴇᴀᴛᴇᴅ ᴏɴ : {created_at}
+✿ ʀᴇᴩᴏsɪᴛᴏʀɪᴇs : {repositories}
+✿ ʙʟᴏɢ : {blog}
+✿ ʟᴏᴄᴀᴛɪᴏɴ : {location}
+✿ ғᴏʟʟᴏᴡᴇʀs : {followers}
+✿ ғᴏʟʟᴏᴡɪɴɢ : {following}"""
 
             except Exception as e:
                 print(str(e))
                 pass
 
     # Create an inline keyboard with a close button
-    close_button = InlineKeyboardButton("Close", callback_data="close")
+    close_button = InlineKeyboardButton("⌯ ᴄʟσsє ⌯", callback_data="close")
     inline_keyboard = InlineKeyboardMarkup([[close_button]])
 
     # Send the message with the inline keyboard
