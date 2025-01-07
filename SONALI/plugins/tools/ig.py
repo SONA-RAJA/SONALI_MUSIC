@@ -20,7 +20,7 @@ async def download_instagram_video(client, message):
         return await message.reply_text(
             "Tʜᴇ ᴘʀᴏᴠɪᴅᴇᴅ URL ɪs ɴᴏᴛ ᴀ ᴠᴀʟɪᴅ Iɴsᴛᴀɢʀᴀᴍ URL😅😅"
         )
-    a = await message.reply_text("ᴘʀᴏᴄᴇssɪɴɢ...")
+    a = await message.reply_text("**ᴘʀᴏᴄᴇssɪɴɢ...**")
     api_url = f"https://insta-dl.hazex.workers.dev/?url={url}"
 
     response = requests.get(api_url)
@@ -46,9 +46,9 @@ async def download_instagram_video(client, message):
         await message.reply_video(video_url, caption=caption)
     else:
         try:
-            return await a.edit("Fᴀɪʟᴇᴅ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ʀᴇᴇʟ")
+            return await a.edit("**𝖥ᴀɪʟᴇᴅ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ʀᴇᴇʟ...**\n\n**𝖦ᴏ ᴛᴏ @PURVI_AI_BOT ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ ʀᴇᴇʟ.**")
         except Exception:
-            return await message.reply_text("Fᴀɪʟᴇᴅ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ʀᴇᴇʟ")
+            return await message.reply_text("**𝖥ᴀɪʟᴇᴅ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ʀᴇᴇʟ...**\n\n**𝖦ᴏ ᴛᴏ @PURVI_AI_BOT ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ ʀᴇᴇʟ.**")
 
 
 MODULE = "Rᴇᴇʟ"
