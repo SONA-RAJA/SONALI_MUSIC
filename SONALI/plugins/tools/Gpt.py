@@ -1,7 +1,7 @@
 from config import BANNED_USERS
 from pyrogram import filters
 from pyrogram.enums import ChatAction
-from TheApi import api
+from PurviAPI import api
 from SONALI import app
 
 
@@ -23,7 +23,7 @@ async def chatgpt_chat(bot, message):
     await message.reply_text(results)
 
 
-__MODULE__ = "CʜᴀᴛGᴘᴛ"
+__MODULE__ = "ᴄʜᴀᴛ-ɢᴘᴛ"
 __HELP__ = """
 /advice - ɢᴇᴛ ʀᴀɴᴅᴏᴍ ᴀᴅᴠɪᴄᴇ ʙʏ ʙᴏᴛ
 /ai [ǫᴜᴇʀʏ] - ᴀsᴋ ʏᴏᴜʀ ǫᴜᴇsᴛɪᴏɴ ᴡɪᴛʜ ᴄʜᴀᴛɢᴘᴛ's ᴀɪ
