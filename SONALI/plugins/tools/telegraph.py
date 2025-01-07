@@ -21,7 +21,7 @@ def upload_file(file_path):
 async def get_link_group(client, message):
     if not message.reply_to_message:
         return await message.reply_text(
-            "Pʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇᴅɪᴀ ᴛᴏ ᴜᴘʟᴏᴀᴅ ᴏɴ Tᴇʟᴇɢʀᴀᴘʜ"
+            "ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇᴅɪᴀ ᴛᴏ ᴜᴘʟᴏᴀᴅ ᴏɴ ᴛᴇʟᴇɢʀᴀᴘʜ"
         )
 
     media = message.reply_to_message
@@ -34,20 +34,20 @@ async def get_link_group(client, message):
         file_size = media.document.file_size
 
     if file_size > 200 * 1024 * 1024:
-        return await message.reply_text("Pʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴍᴇᴅɪᴀ ғɪʟᴇ ᴜɴᴅᴇʀ 200MB.")
+        return await message.reply_text("ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴍᴇᴅɪᴀ ғɪʟᴇ ᴜɴᴅᴇʀ 200MB.")
 
     try:
-        text = await message.reply("Pʀᴏᴄᴇssɪɴɢ...")
+        text = await message.reply("ᴘʀᴏᴄᴇssɪɴɢ...")
 
         async def progress(current, total):
             try:
-                await text.edit_text(f"📥 Dᴏᴡɴʟᴏᴀᴅɪɴɢ... {current * 100 / total:.1f}%")
+                await text.edit_text(f"📥 ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ... {current * 100 / total:.1f}%")
             except Exception:
                 pass
 
         try:
             local_path = await media.download(progress=progress)
-            await text.edit_text("📤 Uᴘʟᴏᴀᴅɪɴɢ ᴛᴏ ᴛᴇʟᴇɢʀᴀᴘʜ...")
+            await text.edit_text("📤 ᴜᴘʟᴏᴀᴅɪɴɢ ᴛᴏ ᴛᴇʟᴇɢʀᴀᴘʜ...")
 
             success, upload_path = upload_file(local_path)
 
@@ -58,7 +58,7 @@ async def get_link_group(client, message):
                         [
                             [
                                 InlineKeyboardButton(
-                                    "𝖢ʀᴇᴀᴛᴇ ʙʏ 𝖳ᴇᴀᴍ 𝖯ᴜʀᴠɪ 𝖳ᴀᴘ ᴛᴏ 𝖲ᴇᴇ",
+                                    "ᴛᴀᴘ ᴛᴏ sᴇᴇ / ᴄᴏᴘʏ",
                                     url=upload_path,
                                 )
                             ]
@@ -76,7 +76,7 @@ async def get_link_group(client, message):
                 pass
 
         except Exception as e:
-            await text.edit_text(f"❌ Fɪʟᴇ ᴜᴘʟᴏᴀᴅ ғᴀɪʟᴇᴅ\n\n<i>Rᴇᴀsᴏɴ: {e}</i>")
+            await text.edit_text(f"❌ ғɪʟᴇ ᴜᴘʟᴏᴀᴅ ғᴀɪʟᴇᴅ\n\n<i>Rᴇᴀsᴏɴ: {e}</i>")
             try:
                 os.remove(local_path)
             except Exception:
